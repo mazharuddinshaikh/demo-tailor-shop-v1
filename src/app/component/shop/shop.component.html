@@ -1,0 +1,190 @@
+<section class="container">
+    <div class="row mt-4">
+        <!-- add update shop -->
+        <form [formGroup]="shopForm">
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- shop details -->
+                    <div class="row mb-2">
+                        <button type="button" class="btn btn-dark" (click)="toggleView('shopDetail')">Shop
+                            Details</button>
+                    </div>
+                    @if (isShopDetailVisible) {
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label for="shopName" class="shop-input-label">SHOP NAME</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control form-control-sm mb-2" placeholder="SHOP NAME"
+                                formControlName="shopName">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label for="shopCode" class="shop-input-label">SHOP CODE</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control form-control-sm mb-2" placeholder="SHOP CODE"
+                                formControlName="shopCode">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label for="mobileNumberOne" class="shop-input-label">MOBILE NUMBER ONE</label>
+                        </div>
+                        <div class="col">
+                            <input type="tel" class="form-control form-control-sm mb-2" placeholder="MOBILE NUMBER ONE"
+                                formControlName="mobileNumberOne">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label for="mobileNumberTwo" class="shop-input-label">MOBILE NUMBER TWO</label>
+                        </div>
+                        <div class="col">
+                            <input type="tel" class="form-control form-control-sm mb-2" placeholder="MOBILE NUMBER TWO"
+                                formControlName="mobileNumberTwo">
+                        </div>
+                    </div>
+                    }
+                    <!-- shop image-->
+                    <div class="row mb-2">
+                        <button type="button" class="btn btn-dark" (click)="toggleView('shopImage')">Add shop
+                            Image</button>
+                    </div>
+                    @if (isShopImageVisible) {
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label for="shopImage" class="shop-input-label">SHOP IMAGE</label>
+                        </div>
+                        <div class="col">
+                            <input class="form-control form-control-sm mb-2" formControlName="shopImage" type="file"
+                                (change)="handleFileInput($event)" />
+                        </div>
+                    </div>
+                    }
+                    <!-- shop timing -->
+                    <div class="row mb-2">
+                        <button type="button" class="btn btn-dark" (click)="toggleView('shopTiming')">Add Shop
+                            Timing</button>
+                    </div>
+                    @if (isShopTimingVisible) {
+                    <div class="row mb-2">
+                        <div class="col-md-3">
+                            <label for="holiday" class="shop-input-label">Holiday</label>
+                        </div>
+                        <div class="col">
+                            <select id="holiday">
+                                <option value="" selected>Select Holiday</option>
+                                <option value="monday">Monday</option>
+                                <option value="tuesday">Tuesday</option>
+                                <option value="wednuesday">Wednuesday</option>
+                                <option value="thursday">Thursday</option>
+                                <option value="friday">Friday</option>
+                                <option value="saturday">Saturday</option>
+                                <option value="sunday">Sunday</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label for="openTime" class="shop-input-label">OPEN TIME</label>
+                                </div>
+                                <div class="col">
+                                    <input type="time" class="form-control form-control-sm mb-2"
+                                        formControlName="openTime">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label for="closeTime" class="shop-input-label">CLOSE TIME</label>
+                                </div>
+                                <div class="col">
+                                    <input type="time" class="form-control form-control-sm mb-2"
+                                        formControlName="closeTime">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                    <!-- shop address -->
+                    <div class="row mb-2">
+                        <button type="button" class="btn btn-dark" (click)="toggleView('shopAddress')">Add Shop
+                            Address</button>
+                    </div>
+                    @if (isShopAddressVisible) {
+                    <div formGroupName="shopAddress">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="addressLineOne" class="shop-input-label">ADDRESS LINE ONE</label>
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control form-control-sm mb-2"
+                                    placeholder="ADDRESS LINE ONE" formControlName="addressLineOne">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="addressLineOne" class="shop-input-label">ADDRESS LINE TWO</label>
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control form-control-sm mb-2"
+                                    placeholder="ADDRESS LINE TWO" formControlName="addressLineTwo">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label for="city" class="shop-input-label">CITY</label>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control form-control-sm mb-2" placeholder="CITY"
+                                            formControlName="city">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label for="state" class="shop-input-label">STATE</label>
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control form-control-sm mb-2" placeholder="STATE"
+                                            formControlName="state">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label for="zipCode" class="shop-input-label">ZIP CODE</label>
+                                    </div>
+                                    <div class="col">
+                                        <input type="number" class="form-control form-control-sm mb-2"
+                                            placeholder="ZIP CODE" formControlName="zipCode">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+                <div class="col-md-4">
+                    @if (shopImageUrl) {
+                    <img width="500" height="400" [src]="shopImageUrl" class="image">
+                    }
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-center my-2">
+                    <button type="button" class="btn btn-primary">ADD SHOP</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

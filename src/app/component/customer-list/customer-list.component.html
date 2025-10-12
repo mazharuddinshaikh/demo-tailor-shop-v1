@@ -1,0 +1,23 @@
+<section>
+    <div class="row my-4 mx-2 justify-content-md-center">
+        @for (customer of customerList; track $index) {
+        <!-- (click)="redirectToShopDetails(shop.shopId ?? '')" -->
+        <div class="col-md-2 mx-2 my-2 card">
+            <div class="card-body">
+                <span class="card-title fw-bolder">{{customer.firstName}} {{customer.middleName}}
+                    {{customer.lastName}}</span><br>
+                <span class="card-text fw-bolder">{{customer.mobileNo}}</span>
+                <p class="card-text shop-address">DRESS - 5</p>
+                <p class="card-text shop-address">{{customer.shop?.shopName}}</p>
+                <div class="row my-2">
+                    <a class="col btn btn-success me-2" [routerLink]="['customer', customer.customerId]"
+                        [queryParams]="{'action': 'view'}">View</a>
+                </div>
+            </div>
+        </div>
+        }
+        <div class="text-center">
+            <button type="button" class="btn btn-link" (click)="loadCustomer()">Load more...</button>
+        </div>
+    </div>
+</section>

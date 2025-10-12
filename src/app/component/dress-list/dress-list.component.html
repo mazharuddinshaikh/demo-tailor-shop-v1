@@ -1,0 +1,17 @@
+<section>
+    <div class="row my-4 mx-2 justify-content-md-center">
+        @for (dressStats of dressStatsList; track $index) {
+        <!-- (click)="redirectToShopDetails(shop.shopId ?? '')" -->
+        <div class="col-md-2 mx-2 my-2 card">
+            <div class="card-body">
+                <span class="card-title fw-bolder">{{dressStats.dressCount}}</span><br>
+                <span class="card-text fw-bolder">{{dressStats.shopName}}</span>
+                <p class="card-text shop-address">{{dressStats.orderDate}}</p>
+            </div>
+        </div>
+        }
+        <div class="text-center">
+            <button type="button" class="btn btn-link" (click)="loadDress()">Load more...</button>
+        </div>
+    </div>
+</section>

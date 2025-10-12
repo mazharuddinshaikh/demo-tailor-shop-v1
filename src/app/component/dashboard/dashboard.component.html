@@ -1,0 +1,67 @@
+<section>
+    <div class="row text-center mb-2 mt-2 ms-2 me-2">
+        <div class="col d-table btn">
+            @if (stats.shopCount === 0) {
+            <div class="card dashboard-item  d-table-cell align-middle bg-danger fs-3">
+                No <br />
+                SHOP <br />
+                AVAILABLE
+            </div>
+            } @else {
+            <div class="card dashboard-item  d-table-cell align-middle bg-success fs-1"
+                (click)="updateVisibleComponent('shopList')">
+                {{stats.shopCount}} <br />
+                SHOP
+            </div>
+            }
+        </div>
+        <div class="col d-table btn">
+            @if (stats.customerCount === 0) {
+            <div class="card dashboard-item  d-table-cell align-middle bg-danger fs-3"
+                (click)="updateVisibleComponent('customerList')">
+                No <br />
+                CUSTOMER <br />
+                AVAILABLE
+            </div>
+            } @else {
+            <div class="card dashboard-item  d-table-cell align-middle bg-success fs-1"
+                (click)="updateVisibleComponent('customerList')">
+                {{stats.customerCount}} <br />
+                CUSTOMER
+            </div>
+            }
+        </div>
+        <div class="col d-table btn">
+            @if (stats.dressCount === 0) {
+            <div class="card dashboard-item  d-table-cell align-middle bg-danger fs-3"
+                (click)="updateVisibleComponent('dressStatsList')">
+                No <br />
+                DRESS <br />
+                AVAILABLE
+            </div>
+            } @else {
+            <div class="card dashboard-item  d-table-cell align-middle bg-success fs-1"
+                (click)="updateVisibleComponent('dressStatsList')">
+                {{stats.dressCount}} <br />
+                DRESS
+            </div>
+            }
+        </div>
+    </div>
+    <div class="row text-center dashboard-item mt-2 ms-2 me-2">
+        <div class="col d-table btn">
+            <div class="card dashboard-item  d-table-cell align-middle bg-primary fs-3" routerLink="/shop">+ <br />ADD
+                <br /> SHOP
+            </div>
+        </div>
+        <div class="col d-table btn">
+            <div class="card dashboard-item  d-table-cell align-middle bg-primary fs-3" routerLink="/customer">
+                + <br />ADD <br /> CUSTOMER</div>
+        </div>
+        <div class="col d-table btn">
+            <div class="card dashboard-item  d-table-cell align-middle bg-primary fs-3">+ <br />ADD <br /> DRESS
+            </div>
+        </div>
+    </div>
+    <ng-container *ngComponentOutlet="loadedComponent" />
+</section>
