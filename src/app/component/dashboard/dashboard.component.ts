@@ -1,5 +1,4 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { ShopComponent } from '../shop/shop.component';
 import { NgComponentOutlet } from '@angular/common';
 import { ShopListComponent } from '../shop-list/shop-list.component';
 import { RouterLink } from '@angular/router';
@@ -31,7 +30,6 @@ export class DashboardComponent implements OnInit {
     switch (componentName) {
       case 'shopList':
         this.loadedComponent = ShopListComponent;
-
         break;
       case 'customerList':
         this.loadedComponent = CustomerListComponent;
