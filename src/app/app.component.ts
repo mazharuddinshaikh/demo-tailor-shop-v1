@@ -9,5 +9,6 @@ import { HeaderComponent } from './component/header/header.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  isLoggedIn: boolean = false;
   title = 'digi-tailor-angular';
 }
