@@ -32,6 +32,11 @@ export const routes: Routes = [
         loadComponent: () => import('./component/signin/signin.component').then(com => com.SigninComponent)
     },
     {
+        path: 'home',
+        pathMatch: 'full',
+        loadComponent: () => import('./component/home/home.component').then(com => com.HomeComponent)
+    },
+    {
         path: '',
         pathMatch: 'full',
         loadComponent: () => import('./component/dashboard/dashboard.component').then(com => com.DashboardComponent)
