@@ -1,0 +1,57 @@
+<section class="bg-light">
+    <!-- Search Shop -->
+    <div class="container py-5 text-center">
+      <h1 class="fw-bold mb-5">Search Tailor Shop Near You</h1>
+    </div>
+  
+    <!-- Shop Carousel -->
+    <div class="container mb-5">
+      <p-carousel 
+        [value]="dummyShopList" 
+        [numVisible]="3" 
+        [numScroll]="1" 
+        [circular]="true"
+        [responsiveOptions]="responsiveOptions" 
+        [autoplayInterval]="10000">
+  
+        <ng-template pTemplate="item" let-shop>
+          <div class="border rounded m-2 p-4 text-center">
+            <img src="app_icon.png" [alt]="shop.shopName" width="60" height="60" class="mb-3" />
+            <div class="fw-medium">{{ shop.shopName }}</div>
+            <div class="fw-semibold text-xl">{{ shop.mobileNo }}</div>
+          </div>
+        </ng-template>
+      </p-carousel>
+    </div>
+  
+    <!-- Generate Pattern -->
+    <div class="container py-5 text-center">
+      <h1 class="fw-bold mb-5">Generate Pattern For Your Dress</h1>
+    </div>
+  
+    <!-- Pattern Carousel -->
+    <div class="container mb-5">
+      <p-carousel 
+        [value]="dummyShopList" 
+        [numVisible]="3" 
+        [numScroll]="1" 
+        [circular]="true"
+        [responsiveOptions]="responsiveOptions" 
+        [autoplayInterval]="5000">
+  
+        <ng-template pTemplate="item" let-shop>
+          <div class="border rounded m-2 p-4 text-center">
+            <img src="app_icon.png" [alt]="shop.shopName" width="60" height="60" class="mb-3" />
+            <div class="fw-medium">{{ shop.shopName }}</div>
+            <div class="fw-semibold text-xl">{{ shop.mobileNo }}</div>
+          </div>
+        </ng-template>
+      </p-carousel>
+    </div>
+  
+    <!-- Run Shop Online -->
+    <div class="container py-5 text-center">
+      <h1 class="fw-bold mb-5">Run Your Shop Online From Here</h1>
+    </div>
+  </section>
+  
